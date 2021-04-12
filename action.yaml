@@ -5,5 +5,5 @@ runs:
   using: 'docker'
   image: 'docker://amazon/aws-cli:latest'
   args:
-    - s3
-    - ls
+    - sts
+    - get-caller-identity
