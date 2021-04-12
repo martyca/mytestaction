@@ -1,7 +1,13 @@
-FROM amazon/aws-cli:2.1.36
+FROM ubuntu:latest
 
-# Copies your code file from your action repository to the filesystem path `/` of the container
-# COPY entrypoint.sh /entrypoint.sh
+RUN apt-get update && \
+    apt-get install curl unzip -y && \
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
+    unzip awscliv2.zip && \
+    ./aws/install
+RUN /usr/local/bin/aws --version             # test if installation went well
 
-# Code file to execute when the docker container starts up (`entrypoint.sh`)
-# ENTRYPOINT ["/entrypoint.sh"]
+COPY entrypoint.sh /entrypoint.sh
+
+
+ENTRYPOINT ["/entrypoint.sh"]
