@@ -1,5 +1,9 @@
 # action.yml
 name: 'aws-cli'
+author: Martin Caarels
+branding:
+  icon: "upload"
+  color: green
 description: 'Run an aws-cli command'
 runs:
   using: 'docker'
