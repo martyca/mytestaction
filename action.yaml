@@ -13,4 +13,5 @@ runs:
   using: 'docker'
   image: 'docker://amazon/aws-cli:2.1.36'
   args:
-    - ${{ inputs.awscommand }}
+    - sts
+    - get-caller-identity
