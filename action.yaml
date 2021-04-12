@@ -3,7 +3,7 @@ name: 'aws-cli'
 description: 'Run an aws-cli command'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'docker://amazon/aws-cli:latest'
   args:
     - s3
     - ls
