@@ -1,6 +1,7 @@
 #!/bin/bash
 set
 echo "Hello ${INPUT_GREETER}"
-echo "secret = ${FOO}"
+echo "foo = ${FOO}"
+echo "bar = ${BAR}"
 time=$(date)
 echo "::set-output name=time::$time"
