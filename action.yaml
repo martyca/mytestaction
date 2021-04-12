@@ -1,14 +1,16 @@
 # action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'aws-cli'
+description: 'Run any aws-cli command'
 inputs:
-  greeter:  # id of input
-    description: 'Who to greet'
+  awscommand:  # id of input
+    description: 'command to pass to aws-cli'
     required: true
-    default: 'World'
+    default: 'sts get-caller-identity'
 outputs:
   time: # id of output
     description: 'The time we greeted you'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.awscommand }}

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 set
 echo "Hello ${INPUT_GREETER}"
 echo "foo = ${FOO}"
