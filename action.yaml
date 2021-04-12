@@ -1,14 +1,6 @@
 # action.yml
 name: 'aws-cli'
-description: 'Run any aws-cli command'
-inputs:
-  awscommand:  # id of input
-    description: 'command to pass to aws-cli'
-    required: true
-    default: '--version'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+description: 'Run an aws-cli command'
 runs:
   using: 'docker'
   image: 'docker://amazon/aws-cli:2.1.36'
