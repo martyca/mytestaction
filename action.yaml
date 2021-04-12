@@ -5,7 +5,7 @@ inputs:
   awscommand:  # id of input
     description: 'command to pass to aws-cli'
     required: true
-    default: --version
+    default: '--version'
 outputs:
   time: # id of output
     description: 'The time we greeted you'
@@ -13,4 +13,4 @@ runs:
   using: 'docker'
   image: 'amazon/aws-cli:2.1.36'
   args:
-    - sts get-caller-identity
+    - ${{ inputs.awscommand }}
